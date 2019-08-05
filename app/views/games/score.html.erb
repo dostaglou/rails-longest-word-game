@@ -1,0 +1,10 @@
+<h1>Your Score Is:</h1>
+
+<p>Drum Roll Please</p>
+
+<p> <% if @result["found"] %>
+      <%= "Your word was '#{@result["word"]}' with a score of #{@result["length"] * 5 + @time * -1} and it took you #{@time}"%>
+    <% else %>
+      <%= "Unforetunately your score is 0 as the word you typed does not exist in our dictionary" %>
+    <% end %>
+</p>

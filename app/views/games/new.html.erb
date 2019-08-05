@@ -1,0 +1,17 @@
+<h1>Let's Play a Game!</h1>
+<% @start = Time.now.to_i %>
+<ul>
+  <% @grid.each do |letter| %>
+    <li style="display: inline">
+      <%= letter %>
+    </li>
+  <% end %>
+</ul>
+<p>Please type in the longest word you can from the list above.</p>
+<form action="score">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :time, @start %>
+  <%= hidden_field_tag :grid, @grid %>
+  <input type="text" name="answer">
+  <input type="submit" value="Ask!">
+</form>
